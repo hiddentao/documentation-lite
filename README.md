@@ -27,7 +27,7 @@ TODO...
 
 ## Contributors
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Contributions welcome - see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
