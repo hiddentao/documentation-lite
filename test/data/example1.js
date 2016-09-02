@@ -21,7 +21,7 @@ const TESTDIR = path.join(__dirname, '..');
 /**
  * My name, of course. And it's global!
  * @type {String}
- * @global
+ * @global App.myvar
  */
 const MYNAME = 'Ram';
 
@@ -72,6 +72,8 @@ class Weapon {
    * Build a new instance of this object.
    *
    * (Hehe...or so you think!)
+   *
+   * @param {String|Number} msg The message to output.
    *
    * @throws {Error} when I want, which will be always.
    */

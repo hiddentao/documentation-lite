@@ -4,8 +4,10 @@
   "description": "Extract JSDoc documentation from a Javascript source file into a JSON output structure.",
   "main": "lib/index.js",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "debug": "^2.2.0",
     "documentation": "^4.0.0-beta10",
+    "lodash": "^4.15.0",
     "tmp": "0.0.28"
   },
   "devDependencies": {
@@ -14,7 +16,7 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "mocha --ui exports --reporter spec test/*.test.js"
   },
   "repository": {
     "type": "git",
