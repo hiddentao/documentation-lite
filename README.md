@@ -13,6 +13,7 @@ processing one file at a time.
 
 Features:
 * Works with both code strings and files.
+* Works with constants, classes, static methods and generator methods.
 * Uses Markdown formatting where needed (e.g. for inline code)
 * Can optionally attach original source code to each tree node.
 
