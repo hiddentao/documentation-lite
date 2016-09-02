@@ -20,13 +20,62 @@ const test = module.exports = {};
 
 
 test['example1'] = {
-  'code string - promise': function*() {
-    const codeStr = fs.readFileSync(EXAMPLE1).toString();
-    
-    const result = yield docLite.processString(codeStr);
-    
-    fs.writeFileSync('./test.json', JSON.stringify(result, null, 2));
-    
-    console.log(result);
+  beforeEach: function*() {
+    this.json = readFile(EXAMPLE1 + '.json');
+  },
+  'string': {
+    beforeEach: function*() {
+      this.code = readFile(EXAMPLE1);
+    },
+    promise: function*() {
+      const result = yield docLite.processString(this.code);
+      
+      JSON.stringify(result, null, 2).should.eql(this.json);      
+    },
+    callback: function(done) {
+      docLite.processString(this.code, (err, result) => {
+        if (err) {
+          return done(err);
+        }  
+        
+        try {
+          JSON.stringify(result, null, 2).should.eql(this.json);      
+          
+          done();
+        } catch (err) {
+          done(err);
+        }
+      });        
+    },
+  },
+  file: {
+    promise: function*() {
+      const result = yield docLite.processFile(EXAMPLE1);
+      
+      JSON.stringify(result, null, 2).should.eql(this.json);      
+    },
+    callback: function(done) {
+      docLite.processFile(EXAMPLE1, (err, result) => {
+        if (err) {
+          return done(err);
+        }  
+        
+        try {
+          JSON.stringify(result, null, 2).should.eql(this.json);      
+          
+          done();
+        } catch (err) {
+          done(err);
+        }
+      });        
+    },
   }
 };
+
+
+
+
+function readFile(filePath) {
+  return fs.readFileSync(filePath, 'utf8').toString();
+}
+

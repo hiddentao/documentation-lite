@@ -85,8 +85,16 @@ class Weapon {
    * Get type of this weapon.
    * @return {String}
    */
-  getType () {
-    return 'unknown';
+  get a () {
+    return this._type || 'unknown';
+  }
+
+  /**
+   * Set type of this weapon.
+   * @param {String} val The value to set.
+   */
+  set a (val) {
+    this._type = val;
   }
 }
 
@@ -97,6 +105,13 @@ class Weapon {
  * Use this wisely, or not, it's upto you really.
  */
 class LightSabre extends Weapon {
+  /**
+   * Destroy all possibilities of this weapon.
+   */
+  static destroyAll () {
+    console.log('No more lightsabres allowed? Yikes');
+  }
+  
   /**
    * This is the constructor.
    *
@@ -139,7 +154,7 @@ class LightSabre extends Weapon {
    * @override
    * @see Weapon#getType
    */
-  getType () {
+  get a () {
     return 'light sabre';
   }
 }
