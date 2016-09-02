@@ -43,7 +43,7 @@ and also accept callbacks in case that's how you'd rather code:
  * @param {String} codeStr String of code to process.
  * @param {Object} [options] Additional options.
  * @param {Boolean} [options.includeCode] If set then each output node will include a `code` key containing the original relevant source code.
- * @param {Function} [cb] Result callback, in case you don't want to use Promises.
+ * @param {Function} [cb] Result callback, in case you do not want to use Promises.
  * @return {Promise} resolves to JSON structure.
  */
 processString (codeStr, options, cb);
@@ -54,7 +54,7 @@ processString (codeStr, options, cb);
  * @param  {String} filePath Absolute path to file.
  * @param {Object} [options] Additional options.
  * @param {Boolean} [options.includeCode] If set then each output node will include a `code` key containing the original relevant source code.
- * @param {Function} [cb] Result callback, in case you don't want to use Promises.
+ * @param {Function} [cb] Result callback, in case you do not want to use Promises.
  * @return {Promise} resolves to JSON structure.
  */
 processFile (filePath, options, cb);
