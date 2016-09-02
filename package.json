@@ -16,7 +16,8 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha --ui exports --reporter spec test/*.test.js"
+    "test": "mocha --ui exports --reporter spec test/*.test.js",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
