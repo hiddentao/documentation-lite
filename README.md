@@ -1,5 +1,7 @@
 # documentation-lite
 
+[![Build Status](https://secure.travis-ci.org/hiddentao/documentation-lite.png)](http://travis-ci.org/hiddentao/documentation-lite)
+
 Extract JSDoc documentation from ES5/ES6 files into a JSON output structure.
 
 This is a wrapper around the excellent [documentation.js](https://github.com/documentationjs/documentation) 
