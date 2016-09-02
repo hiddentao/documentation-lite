@@ -11,6 +11,8 @@ Provides a Programmatic API as well as a CLI.
 
 TODO...
 
+For more examples check out the [test/data folder](./test/data);
+
 ## Installation
 
 ```shell
