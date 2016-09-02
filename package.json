@@ -6,9 +6,13 @@
   "dependencies": {
     "documentation": "^4.0.0-beta10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
+    "mocha": "^3.0.2"
+  },
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
