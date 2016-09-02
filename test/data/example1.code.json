@@ -1,0 +1,666 @@
+{
+  "file": {
+    "description": [
+      "This is a file, duh.",
+      "This file has a tonne of cool stuff inside it. I don't even know what to do \nwith all of this cool stuff.",
+      "Here is another paragraph so that I can test multiple paragraphs."
+    ]
+  },
+  "constants": [
+    {
+      "name": "TESTDIR",
+      "tags": {
+        "type": [
+          {
+            "description": null,
+            "type": {
+              "name": "String"
+            }
+          }
+        ]
+      },
+      "description": [
+        "Path to test folder."
+      ],
+      "type": {
+        "description": null,
+        "type": {
+          "name": "String"
+        }
+      },
+      "code": [
+        "const TESTDIR = path.join(__dirname, '..');"
+      ]
+    },
+    {
+      "name": "MYNAME",
+      "tags": {
+        "type": [
+          {
+            "description": null,
+            "type": {
+              "name": "String"
+            }
+          }
+        ],
+        "global": [
+          {
+            "description": null
+          }
+        ]
+      },
+      "description": [
+        "My name, of course. And it's global!"
+      ],
+      "type": {
+        "description": null,
+        "type": {
+          "name": "String"
+        }
+      },
+      "global": {
+        "description": null
+      },
+      "code": [
+        "const MYNAME = 'Ram';"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "ensureNameMatches",
+      "tags": {
+        "example": [
+          {
+            "description": "const e = require('example1');\n\n// make the call and pray and hope that it works out!\ne.ensureNameMatches('jack');"
+          },
+          {
+            "description": "// ensure it doesn't throw\nconsole.log( e.ensureNameMatches('jack', true) );"
+          }
+        ],
+        "param": [
+          {
+            "description": "the name to check against",
+            "type": {
+              "name": "String"
+            },
+            "name": "name"
+          },
+          {
+            "description": "if set then will return 0 for a mismatch, otherwise will throw.",
+            "type": {
+              "optional": true,
+              "name": "Boolean"
+            },
+            "name": "dontThrow"
+          }
+        ],
+        "return": [
+          {
+            "description": "42 if it matches, 0 otherwise.",
+            "type": {
+              "name": "Number"
+            }
+          }
+        ],
+        "throws": [
+          {
+            "description": "if `dontThrow` is not set and `name` doesn't match.",
+            "type": {
+              "name": "Error"
+            }
+          }
+        ]
+      },
+      "description": [
+        "Check that name matches.",
+        "Let's be honest, this function makes no sense whatsoever. Why did I even \nwrite this?",
+        "Anyway, I should probably add an example..."
+      ],
+      "params": [
+        {
+          "name": "name",
+          "description": [
+            "the name to check against"
+          ],
+          "type": {
+            "name": "String"
+          }
+        },
+        {
+          "name": "dontThrow",
+          "description": [
+            "if set then will return 0 for a mismatch, otherwise will throw."
+          ],
+          "type": {
+            "optional": true,
+            "name": "Boolean"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "description": [
+            "42 if it matches, 0 otherwise."
+          ],
+          "type": {
+            "name": "Number"
+          }
+        }
+      ],
+      "throws": [
+        {
+          "description": [
+            "if `dontThrow` is not set and `name` doesn't match."
+          ],
+          "type": {
+            "name": "Error"
+          }
+        }
+      ],
+      "code": [
+        "exports.ensureNameMatches = function(name, dontThrow) {",
+        "  if (name !== MYNAME) {",
+        "    if (dontThrow) {",
+        "      return 0;",
+        "    } else {",
+        "      throw new Error('Bad name, bad name!');",
+        "    }",
+        "  } else {",
+        "    return 42;  // the answer to everything",
+        "  }",
+        "};"
+      ]
+    },
+    {
+      "name": "openSesame",
+      "tags": {
+        "return": [
+          {
+            "description": null,
+            "type": {
+              "name": "Promise"
+            }
+          }
+        ]
+      },
+      "description": [
+        "Open the door.",
+        "The door is super-heavy and takes time to open, so we need this to \nbe asynchronous. 好不好？"
+      ],
+      "params": [],
+      "returns": [
+        {
+          "description": [],
+          "type": {
+            "name": "Promise"
+          }
+        }
+      ],
+      "throws": [],
+      "code": [
+        "exports.openSesame = function*() {",
+        "  return new Promise((resolve, reject) => {",
+        "    resolve(1234);",
+        "  });",
+        "}"
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "name": "Weapon",
+      "tags": {},
+      "description": [
+        "A weapon.",
+        "It does what it says on the tin my young apprentice."
+      ],
+      "parents": [],
+      "members": {
+        "methods": {},
+        "instanceProperties": {
+          "a": {
+            "name": "a",
+            "getter": {
+              "name": "a",
+              "tags": {
+                "return": [
+                  {
+                    "description": null,
+                    "type": {
+                      "name": "String"
+                    }
+                  }
+                ]
+              },
+              "description": [
+                "Get type of this weapon."
+              ],
+              "params": [],
+              "returns": [
+                {
+                  "description": [],
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ],
+              "throws": [],
+              "code": [
+                "  get a () {",
+                "    return this._type || 'unknown';",
+                "  }"
+              ]
+            },
+            "setter": {
+              "name": "a",
+              "tags": {
+                "param": [
+                  {
+                    "description": "The value to set.",
+                    "type": {
+                      "name": "String"
+                    },
+                    "name": "val"
+                  }
+                ]
+              },
+              "description": [
+                "Set type of this weapon."
+              ],
+              "params": [
+                {
+                  "name": "val",
+                  "description": [
+                    "The value to set."
+                  ],
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ],
+              "returns": [],
+              "throws": [],
+              "code": [
+                "  set a (val) {",
+                "    this._type = val;",
+                "  }"
+              ]
+            }
+          }
+        },
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "param": [
+              {
+                "description": "The message to output.",
+                "type": {},
+                "name": "msg"
+              }
+            ],
+            "throws": [
+              {
+                "description": "when I want, which will be always.",
+                "type": {
+                  "name": "Error"
+                }
+              }
+            ]
+          },
+          "description": [
+            "Build a new instance of this object.",
+            "(Hehe...or so you think!)"
+          ],
+          "params": [
+            {
+              "name": "msg",
+              "description": [
+                "The message to output."
+              ],
+              "type": {}
+            }
+          ],
+          "returns": [],
+          "throws": [
+            {
+              "description": [
+                "when I want, which will be always."
+              ],
+              "type": {
+                "name": "Error"
+              }
+            }
+          ],
+          "code": [
+            "  constructor (msg) {",
+            "    throw new Error(`I am throwing your message back at ya: ${msg} `);",
+            "  }"
+          ]
+        },
+        "staticMethods": {}
+      },
+      "constructor": {
+        "name": "constructor",
+        "tags": {
+          "param": [
+            {
+              "description": "The message to output.",
+              "type": {},
+              "name": "msg"
+            }
+          ],
+          "throws": [
+            {
+              "description": "when I want, which will be always.",
+              "type": {
+                "name": "Error"
+              }
+            }
+          ]
+        },
+        "description": [
+          "Build a new instance of this object.",
+          "(Hehe...or so you think!)"
+        ],
+        "params": [
+          {
+            "name": "msg",
+            "description": [
+              "The message to output."
+            ],
+            "type": {}
+          }
+        ],
+        "returns": [],
+        "throws": [
+          {
+            "description": [
+              "when I want, which will be always."
+            ],
+            "type": {
+              "name": "Error"
+            }
+          }
+        ],
+        "code": [
+          "  constructor (msg) {",
+          "    throw new Error(`I am throwing your message back at ya: ${msg} `);",
+          "  }"
+        ]
+      },
+      "code": [
+        "class Weapon {",
+        "  /**",
+        "   * Build a new instance of this object.",
+        "   *",
+        "   * (Hehe...or so you think!)",
+        "   *",
+        "   * @param {String|Number} msg The message to output.",
+        "   *",
+        "   * @throws {Error} when I want, which will be always.",
+        "   */",
+        "  constructor (msg) {",
+        "    throw new Error(`I am throwing your message back at ya: ${msg} `);",
+        "  } ",
+        "  ",
+        "  /**",
+        "   * Get type of this weapon.",
+        "   * @return {String}",
+        "   */",
+        "  get a () {",
+        "    return this._type || 'unknown';",
+        "  }",
+        "",
+        "  /**",
+        "   * Set type of this weapon.",
+        "   * @param {String} val The value to set.",
+        "   */",
+        "  set a (val) {",
+        "    this._type = val;",
+        "  }",
+        "}"
+      ]
+    },
+    {
+      "name": "LightSabre",
+      "tags": {},
+      "description": [
+        "Aaah, a Jedi weapon!",
+        "Use this wisely, or not, it's upto you really."
+      ],
+      "parents": [
+        {
+          "name": "Weapon"
+        }
+      ],
+      "members": {
+        "methods": {
+          "strike": {
+            "name": "strike",
+            "tags": {
+              "return": [
+                {
+                  "description": "will have `success: true` set.",
+                  "type": {
+                    "name": "Object"
+                  }
+                }
+              ]
+            },
+            "description": [
+              "Strike an opponent.",
+              "Maul them down, completely."
+            ],
+            "params": [
+              {
+                "name": "opponent",
+                "description": [],
+                "type": {}
+              }
+            ],
+            "returns": [
+              {
+                "description": [
+                  "will have `success: true` set."
+                ],
+                "type": {
+                  "name": "Object"
+                }
+              }
+            ],
+            "throws": [],
+            "code": [
+              "  strike (opponent) {",
+              "    console.log(this.dukeNukemQuote);",
+              "    ",
+              "    this._putLightSabreThroughHeart(opponent);",
+              "    ",
+              "    return {",
+              "      success: true",
+              "    };",
+              "  }"
+            ]
+          },
+          "strikeAsync": {
+            "name": "strikeAsync",
+            "tags": {
+              "see": [
+                {
+                  "description": "strike"
+                }
+              ]
+            },
+            "description": [
+              "Strike an opponent asynchronously."
+            ],
+            "params": [
+              {
+                "name": "opponent",
+                "description": [],
+                "type": {}
+              }
+            ],
+            "returns": [],
+            "throws": [],
+            "code": [
+              "  * strikeAsync (opponent) {",
+              "    return this.strike(opponent);",
+              "  }"
+            ]
+          }
+        },
+        "instanceProperties": {
+          "a": {
+            "name": "a",
+            "getter": {
+              "name": "a",
+              "tags": {
+                "override": [
+                  {
+                    "description": null
+                  }
+                ],
+                "see": [
+                  {
+                    "description": "Weapon#getType"
+                  }
+                ]
+              },
+              "description": [],
+              "params": [],
+              "returns": [],
+              "throws": [],
+              "code": [
+                "  get a () {",
+                "    return 'light sabre';",
+                "  }"
+              ]
+            }
+          }
+        },
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "_constructor": [
+              {
+                "description": null
+              }
+            ]
+          },
+          "description": [
+            "This is the constructor.",
+            "Just in case you don't get that let me add the `constructor` tag too!"
+          ],
+          "params": [],
+          "returns": [],
+          "throws": [],
+          "code": [
+            "  constructor () {",
+            "    super('Will you be my friend?');",
+            "    ",
+            "    this.dukeNukemQuote = 'Come get some';",
+            "  }"
+          ]
+        },
+        "staticMethods": {
+          "destroyAll": {
+            "name": "destroyAll",
+            "tags": {},
+            "description": [
+              "Destroy all possibilities of this weapon."
+            ],
+            "params": [],
+            "returns": [],
+            "throws": [],
+            "code": [
+              "  static destroyAll () {",
+              "    console.log('No more lightsabres allowed? Yikes');",
+              "  }"
+            ]
+          }
+        }
+      },
+      "constructor": {
+        "name": "constructor",
+        "tags": {
+          "_constructor": [
+            {
+              "description": null
+            }
+          ]
+        },
+        "description": [
+          "This is the constructor.",
+          "Just in case you don't get that let me add the `constructor` tag too!"
+        ],
+        "params": [],
+        "returns": [],
+        "throws": [],
+        "code": [
+          "  constructor () {",
+          "    super('Will you be my friend?');",
+          "    ",
+          "    this.dukeNukemQuote = 'Come get some';",
+          "  }"
+        ]
+      },
+      "code": [
+        "class LightSabre extends Weapon {",
+        "  /**",
+        "   * Destroy all possibilities of this weapon.",
+        "   */",
+        "  static destroyAll () {",
+        "    console.log('No more lightsabres allowed? Yikes');",
+        "  }",
+        "  ",
+        "  /**",
+        "   * This is the constructor.",
+        "   *",
+        "   * Just in case you don't get that let me add the `constructor` tag too!",
+        "   * @constructor",
+        "   */",
+        "  constructor () {",
+        "    super('Will you be my friend?');",
+        "    ",
+        "    this.dukeNukemQuote = 'Come get some';",
+        "  }",
+        "  ",
+        "  /**",
+        "   * Strike an opponent.",
+        "   *",
+        "   * Maul them down, completely.",
+        "   * ",
+        "   * @return {Object} will have `success: true` set.",
+        "   */",
+        "  strike (opponent) {",
+        "    console.log(this.dukeNukemQuote);",
+        "    ",
+        "    this._putLightSabreThroughHeart(opponent);",
+        "    ",
+        "    return {",
+        "      success: true",
+        "    };",
+        "  }",
+        "  ",
+        "  /**",
+        "   * Strike an opponent asynchronously.",
+        "   *",
+        "   * @see strike",
+        "   */",
+        "  * strikeAsync (opponent) {",
+        "    return this.strike(opponent);",
+        "  }",
+        "  ",
+        "  /**",
+        "   * @override",
+        "   * @see Weapon#getType",
+        "   */",
+        "  get a () {",
+        "    return 'light sabre';",
+        "  }",
+        "}"
+      ]
+    }
+  ]
+}

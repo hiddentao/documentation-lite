@@ -10,7 +10,7 @@ const fs = require('fs'),
   
   
 const DATA_DIR = path.join(__dirname, 'data'),
-  EXAMPLE1 = path.join(DATA_DIR, 'example1.js');
+  EXAMPLE1 = path.join(DATA_DIR, 'example1');
   
 
 const docLite = require('../lib');
@@ -19,13 +19,13 @@ const docLite = require('../lib');
 const test = module.exports = {};
 
 
-test['example1'] = {
+test['default'] = {
   beforeEach: function*() {
-    this.json = readFile(EXAMPLE1 + '.json');
+    this.json = readFile(EXAMPLE1 + '.noCode.json');
   },
   'string': {
     beforeEach: function*() {
-      this.code = readFile(EXAMPLE1);
+      this.code = readFile(EXAMPLE1 + '.js');
     },
     promise: function*() {
       const result = yield docLite.processString(this.code);
@@ -50,12 +50,12 @@ test['example1'] = {
   },
   file: {
     promise: function*() {
-      const result = yield docLite.processFile(EXAMPLE1);
+      const result = yield docLite.processFile(EXAMPLE1 + '.js');
       
       JSON.stringify(result, null, 2).should.eql(this.json);      
     },
     callback: function(done) {
-      docLite.processFile(EXAMPLE1, (err, result) => {
+      docLite.processFile(EXAMPLE1 + '.js', (err, result) => {
         if (err) {
           return done(err);
         }  
@@ -71,6 +71,15 @@ test['example1'] = {
     },
   }
 };
+
+
+test['with code'] = function*() {
+  const result = yield docLite.processFile(EXAMPLE1 + '.js', {
+    includeCode: true
+  });
+  
+  JSON.stringify(result, null, 2).should.eql(readFile(EXAMPLE1 + '.code.json'));      
+}
 
 
 
