@@ -9,7 +9,7 @@ Provides a Programmatic API as well as a CLI.
 
 ## Example
 
-
+TODO...
 
 ## Installation
 
@@ -19,12 +19,15 @@ npm install documentation-lite
 
 ## Usage: API
 
+TODO...
 
 ## Usage: CLI
 
+TODO...
+
 ## Contributors
 
-See [CONTRIBUTORS.md](CONTRIBUTORS.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 

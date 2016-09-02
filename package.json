@@ -1,0 +1,32 @@
+{
+  "name": "documentation-lite",
+  "version": "1.0.0",
+  "description": "Extract JSDoc documentation from a Javascript source file into a JSON output structure.",
+  "main": "lib/index.js",
+  "dependencies": {
+    "documentation": "^4.0.0-beta10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiddentao/documentation-lite.git"
+  },
+  "keywords": [
+    "documentation",
+    "jsdoc",
+    "javascript",
+    "docs",
+    "doc",
+    "es6",
+    "es5"
+  ],
+  "author": "Ramesh Nair <ram@hiddentao.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiddentao/documentation-lite/issues"
+  },
+  "homepage": "https://github.com/hiddentao/documentation-lite#readme"
+}
