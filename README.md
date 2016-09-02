@@ -182,4 +182,3 @@ Contributions welcome - see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 MIT - see [LICENSE.md](LICENSE.md)
 
-# documentation-lite
