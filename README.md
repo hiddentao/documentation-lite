@@ -62,7 +62,7 @@ processString (codeStr, options, cb);
 processFile (filePath, options, cb);
 ```
 
-**Using with a Promise**
+### Using with a Promise
 
 Using `processString()` with a Promise:
 
@@ -113,7 +113,7 @@ Will output:
 }
 ```
 
-**Using with a callback**
+### Using with a callback
 
 Using `processFile()` with a callback:
 
@@ -127,7 +127,7 @@ docLite.processFile('myfile.js', (err, json) = {
 });
 ```
 
-**Attaching code to output JSON**
+### Attaching code to output JSON
 
 Example input file:
 
