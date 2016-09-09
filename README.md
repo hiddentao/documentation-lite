@@ -1,6 +1,8 @@
 # documentation-lite
 
-[![Build Status](https://secure.travis-ci.org/hiddentao/documentation-lite.png)](http://travis-ci.org/hiddentao/documentation-lite)
+[![Build Status](https://secure.travis-ci.org/hiddentao/documentation-lite.png)](http://travis-ci.org/hiddentao/documentation-lite) 
+[![NPM module](https://badge.fury.io/js/documentation-lite.png)](https://badge.fury.io/js/documentation-lite)
+[![Follow on Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow&maxAge=2592000)](https://twitter.com/hiddentao)
 
 Extract JSDoc documentation from ES5/ES6 files into a JSON output structure.
 
