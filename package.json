@@ -1,6 +1,6 @@
 {
   "name": "documentation-lite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Extract JSDoc documentation from a Javascript source file into a JSON output structure.",
   "main": "lib/index.js",
   "dependencies": {

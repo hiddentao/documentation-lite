@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "functions": [
+  "methods": [
     {
       "name": "ensureNameMatches",
       "tags": {
@@ -216,9 +216,57 @@
         "It does what it says on the tin my young apprentice."
       ],
       "parents": [],
-      "members": {
-        "methods": {},
-        "instanceProperties": {
+      "instance": {
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "param": [
+              {
+                "description": "The message to output.",
+                "type": {},
+                "name": "msg"
+              }
+            ],
+            "throws": [
+              {
+                "description": "when I want, which will be always.",
+                "type": {
+                  "name": "Error"
+                }
+              }
+            ]
+          },
+          "description": [
+            "Build a new instance of this object.",
+            "(Hehe...or so you think!)"
+          ],
+          "params": [
+            {
+              "name": "msg",
+              "description": [
+                "The message to output."
+              ],
+              "type": {}
+            }
+          ],
+          "returns": [],
+          "throws": [
+            {
+              "description": [
+                "when I want, which will be always."
+              ],
+              "type": {
+                "name": "Error"
+              }
+            }
+          ],
+          "code": [
+            "  constructor (msg) {",
+            "    throw new Error(`I am throwing your message back at ya: ${msg} `);",
+            "  }"
+          ]
+        },
+        "properties": {
           "a": {
             "name": "a",
             "getter": {
@@ -288,58 +336,9 @@
               ]
             }
           }
-        },
-        "constructor": {
-          "name": "constructor",
-          "tags": {
-            "param": [
-              {
-                "description": "The message to output.",
-                "type": {},
-                "name": "msg"
-              }
-            ],
-            "throws": [
-              {
-                "description": "when I want, which will be always.",
-                "type": {
-                  "name": "Error"
-                }
-              }
-            ]
-          },
-          "description": [
-            "Build a new instance of this object.",
-            "(Hehe...or so you think!)"
-          ],
-          "params": [
-            {
-              "name": "msg",
-              "description": [
-                "The message to output."
-              ],
-              "type": {}
-            }
-          ],
-          "returns": [],
-          "throws": [
-            {
-              "description": [
-                "when I want, which will be always."
-              ],
-              "type": {
-                "name": "Error"
-              }
-            }
-          ],
-          "code": [
-            "  constructor (msg) {",
-            "    throw new Error(`I am throwing your message back at ya: ${msg} `);",
-            "  }"
-          ]
-        },
-        "staticMethods": {}
+        }
       },
+      "static": null,
       "constructor": {
         "name": "constructor",
         "tags": {
@@ -434,7 +433,31 @@
           "name": "Weapon"
         }
       ],
-      "members": {
+      "instance": {
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "_constructor": [
+              {
+                "description": null
+              }
+            ]
+          },
+          "description": [
+            "This is the constructor.",
+            "Just in case you don't get that let me add the `constructor` tag too!"
+          ],
+          "params": [],
+          "returns": [],
+          "throws": [],
+          "code": [
+            "  constructor () {",
+            "    super('Will you be my friend?');",
+            "    ",
+            "    this.dukeNukemQuote = 'Come get some';",
+            "  }"
+          ]
+        },
         "methods": {
           "strike": {
             "name": "strike",
@@ -510,7 +533,7 @@
             ]
           }
         },
-        "instanceProperties": {
+        "properties": {
           "a": {
             "name": "a",
             "getter": {
@@ -538,33 +561,11 @@
               ]
             }
           }
-        },
-        "constructor": {
-          "name": "constructor",
-          "tags": {
-            "_constructor": [
-              {
-                "description": null
-              }
-            ]
-          },
-          "description": [
-            "This is the constructor.",
-            "Just in case you don't get that let me add the `constructor` tag too!"
-          ],
-          "params": [],
-          "returns": [],
-          "throws": [],
-          "code": [
-            "  constructor () {",
-            "    super('Will you be my friend?');",
-            "    ",
-            "    this.dukeNukemQuote = 'Come get some';",
-            "  }"
-          ]
-        },
-        "staticMethods": {
-          "destroyAll": {
+        }
+      },
+      "static": {
+        "methods": [
+          {
             "name": "destroyAll",
             "tags": {},
             "description": [
@@ -579,7 +580,7 @@
               "  }"
             ]
           }
-        }
+        ]
       },
       "constructor": {
         "name": "constructor",

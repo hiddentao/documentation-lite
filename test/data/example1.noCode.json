@@ -60,7 +60,7 @@
       }
     }
   ],
-  "functions": [
+  "methods": [
     {
       "name": "ensureNameMatches",
       "tags": {
@@ -190,9 +190,52 @@
         "It does what it says on the tin my young apprentice."
       ],
       "parents": [],
-      "members": {
-        "methods": {},
-        "instanceProperties": {
+      "instance": {
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "param": [
+              {
+                "description": "The message to output.",
+                "type": {},
+                "name": "msg"
+              }
+            ],
+            "throws": [
+              {
+                "description": "when I want, which will be always.",
+                "type": {
+                  "name": "Error"
+                }
+              }
+            ]
+          },
+          "description": [
+            "Build a new instance of this object.",
+            "(Hehe...or so you think!)"
+          ],
+          "params": [
+            {
+              "name": "msg",
+              "description": [
+                "The message to output."
+              ],
+              "type": {}
+            }
+          ],
+          "returns": [],
+          "throws": [
+            {
+              "description": [
+                "when I want, which will be always."
+              ],
+              "type": {
+                "name": "Error"
+              }
+            }
+          ]
+        },
+        "properties": {
           "a": {
             "name": "a",
             "getter": {
@@ -252,53 +295,9 @@
               "throws": []
             }
           }
-        },
-        "constructor": {
-          "name": "constructor",
-          "tags": {
-            "param": [
-              {
-                "description": "The message to output.",
-                "type": {},
-                "name": "msg"
-              }
-            ],
-            "throws": [
-              {
-                "description": "when I want, which will be always.",
-                "type": {
-                  "name": "Error"
-                }
-              }
-            ]
-          },
-          "description": [
-            "Build a new instance of this object.",
-            "(Hehe...or so you think!)"
-          ],
-          "params": [
-            {
-              "name": "msg",
-              "description": [
-                "The message to output."
-              ],
-              "type": {}
-            }
-          ],
-          "returns": [],
-          "throws": [
-            {
-              "description": [
-                "when I want, which will be always."
-              ],
-              "type": {
-                "name": "Error"
-              }
-            }
-          ]
-        },
-        "staticMethods": {}
+        }
       },
+      "static": null,
       "constructor": {
         "name": "constructor",
         "tags": {
@@ -356,7 +355,24 @@
           "name": "Weapon"
         }
       ],
-      "members": {
+      "instance": {
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "_constructor": [
+              {
+                "description": null
+              }
+            ]
+          },
+          "description": [
+            "This is the constructor.",
+            "Just in case you don't get that let me add the `constructor` tag too!"
+          ],
+          "params": [],
+          "returns": [],
+          "throws": []
+        },
         "methods": {
           "strike": {
             "name": "strike",
@@ -416,7 +432,7 @@
             "throws": []
           }
         },
-        "instanceProperties": {
+        "properties": {
           "a": {
             "name": "a",
             "getter": {
@@ -439,26 +455,11 @@
               "throws": []
             }
           }
-        },
-        "constructor": {
-          "name": "constructor",
-          "tags": {
-            "_constructor": [
-              {
-                "description": null
-              }
-            ]
-          },
-          "description": [
-            "This is the constructor.",
-            "Just in case you don't get that let me add the `constructor` tag too!"
-          ],
-          "params": [],
-          "returns": [],
-          "throws": []
-        },
-        "staticMethods": {
-          "destroyAll": {
+        }
+      },
+      "static": {
+        "methods": [
+          {
             "name": "destroyAll",
             "tags": {},
             "description": [
@@ -468,7 +469,7 @@
             "returns": [],
             "throws": []
           }
-        }
+        ]
       },
       "constructor": {
         "name": "constructor",

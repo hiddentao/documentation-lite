@@ -22,6 +22,8 @@ Features:
 * Input file: [test/data/example1.js](test/data/example1.js)
 * Output file: [test/data/example1.noCode.json](test/data/example1.noCode.json)
 
+For more examples see the [test/data](test/data) folder.
+
 ## Installation
 
 ```shell
@@ -157,7 +159,7 @@ Will output:
 
 ```js
 {
-  "functions": [
+  "methods": [
     {
       "name": "print",
       "tags": {...},
