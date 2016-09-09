@@ -17,12 +17,226 @@ Features:
 * Uses Markdown formatting where needed (e.g. for inline code)
 * Can optionally attach original source code to each tree node.
 
-## Demo
+## Example
 
-* Input file: [test/data/example1.js](test/data/example1.js)
-* Output file: [test/data/example1.noCode.json](test/data/example1.noCode.json)
+```js
+/**
+ * Aaah, a Jedi weapon!
+ *
+ * Use this wisely, or not, it's upto you really.
+ */
+class LightSabre extends Weapon {
+  /**
+   * Destroy all possibilities of this weapon.
+   */
+  static destroyAll () {
+    console.log('No more lightsabres allowed? Yikes');
+  }
+  
+  /**
+   * This is the constructor.
+   *
+   * Just in case you don't get that let me add the `constructor` tag too!
+   * @constructor
+   */
+  constructor () {
+    super('Will you be my friend?');
+    
+    this.dukeNukemQuote = 'Come get some';
+  }
+  
+  /**
+   * Strike an opponent.
+   *
+   * Maul them down, completely.
+   * 
+   * @return {Object} will have `success: true` set.
+   */
+  strike (opponent) {
+    console.log(this.dukeNukemQuote);
+    
+    this._putLightSabreThroughHeart(opponent);
+    
+    return {
+      success: true
+    };
+  }
+  
+  /**
+   * Strike an opponent asynchronously.
+   *
+   * @see strike
+   */
+  * strikeAsync (opponent) {
+    return this.strike(opponent);
+  }
+  
+  /**
+   * @override
+   * @see Weapon#getType
+   */
+  get a () {
+    return 'light sabre';
+  }
+}
+```
 
-For more examples see the [test/data](test/data) folder.
+Will output:
+
+```js
+{
+  "classes": [
+    {
+      "name": "LightSabre",
+      "tags": {},
+      "description": [
+        "Aaah, a Jedi weapon!",
+        "Use this wisely, or not, it's upto you really."
+      ],
+      "parents": [
+        {
+          "name": "Weapon"
+        }
+      ],
+      "instance": {
+        "constructor": {
+          "name": "constructor",
+          "tags": {
+            "_constructor": [
+              {
+                "description": null
+              }
+            ]
+          },
+          "description": [
+            "This is the constructor.",
+            "Just in case you don't get that let me add the `constructor` tag too!"
+          ],
+          "params": [],
+          "returns": [],
+          "throws": []
+        },
+        "methods": {
+          "strike": {
+            "name": "strike",
+            "tags": {
+              "return": [
+                {
+                  "description": "will have `success: true` set.",
+                  "type": {
+                    "name": "Object"
+                  }
+                }
+              ]
+            },
+            "description": [
+              "Strike an opponent.",
+              "Maul them down, completely."
+            ],
+            "params": [
+              {
+                "name": "opponent",
+                "description": [],
+                "type": {}
+              }
+            ],
+            "returns": [
+              {
+                "description": [
+                  "will have `success: true` set."
+                ],
+                "type": {
+                  "name": "Object"
+                }
+              }
+            ],
+            "throws": []
+          },
+          "strikeAsync": {
+            "name": "strikeAsync",
+            "tags": {
+              "see": [
+                {
+                  "description": "strike"
+                }
+              ]
+            },
+            "description": [
+              "Strike an opponent asynchronously."
+            ],
+            "params": [
+              {
+                "name": "opponent",
+                "description": [],
+                "type": {}
+              }
+            ],
+            "returns": [],
+            "throws": []
+          }
+        },
+        "properties": {
+          "a": {
+            "name": "a",
+            "getter": {
+              "name": "a",
+              "tags": {
+                "override": [
+                  {
+                    "description": null
+                  }
+                ],
+                "see": [
+                  {
+                    "description": "Weapon#getType"
+                  }
+                ]
+              },
+              "description": [],
+              "params": [],
+              "returns": [],
+              "throws": []
+            }
+          }
+        }
+      },
+      "static": {
+        "methods": [
+          {
+            "name": "destroyAll",
+            "tags": {},
+            "description": [
+              "Destroy all possibilities of this weapon."
+            ],
+            "params": [],
+            "returns": [],
+            "throws": []
+          }
+        ]
+      },
+      "constructor": {
+        "name": "constructor",
+        "tags": {
+          "_constructor": [
+            {
+              "description": null
+            }
+          ]
+        },
+        "description": [
+          "This is the constructor.",
+          "Just in case you don't get that let me add the `constructor` tag too!"
+        ],
+        "params": [],
+        "returns": [],
+        "throws": []
+      }
+    }
+  ]
+}
+```
+
+**For more examples see the [test/data](test/data) folder.**
 
 ## Installation
 
